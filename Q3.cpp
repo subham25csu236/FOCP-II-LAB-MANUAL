@@ -1,27 +1,24 @@
 #include <iostream>
 using namespace std;
-int main() {
-    float temp;
-    int choice;
-    cout << "Temperature Conversion Menu:\n";
-    cout << "1. Fahrenheit to Celsius\n";
-    cout << "2. Celsius to Fahrenheit\n";
-    cout << "Enter your choice (1 or 2): ";
-    cin >> choice;
-    if (choice == 1) {
-        cout << "Enter temperature in Fahrenheit: ";
-        cin >> temp;
-        float celsius = (temp - 32) * 5 / 9;
-        cout << "Temperature in Celsius: " << celsius << endl;
-    }
-    else if (choice == 2) {
+
+class temperature {
+public:
+    float celsius, fahrenheit;
+
+    void getdata() {
         cout << "Enter temperature in Celsius: ";
-        cin >> temp;
-        float fahrenheit = (temp * 9 / 5) + 32;
+        cin >> celsius;
+    }
+
+    void convert() {
+        fahrenheit = (celsius * 9 / 5) + 32;
         cout << "Temperature in Fahrenheit: " << fahrenheit << endl;
     }
-    else {
-        cout << "Invalid choice!" << endl;
-    }
+};
+
+int main() {
+    temperature t1;
+    t1.getdata();
+    t1.convert();
     return 0;
 }

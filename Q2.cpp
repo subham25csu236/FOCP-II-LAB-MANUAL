@@ -1,12 +1,24 @@
-/*An architect wants to calculate the space covered by a circular fountain. Implement a solution to compute 
-the area of a circle. */
 #include <iostream>
 using namespace std;
+
+class circle {
+public:
+    float radius, area;
+
+    void getdata() {
+        cout << "Enter radius: ";
+        cin >> radius;
+    }
+
+    void calcarea() {
+        area = 3.14 * radius * radius;
+        cout << "Area of circle: " << area << endl;
+    }
+};
+
 int main() {
-    float r, area;
-    cout << "Enter the radius of the circle: ";
-    cin >> r;
-    area = 3.14 * r * r;
-    cout << "Area of the circle = " << area << endl;
+    circle c1;
+    c1.getdata();
+    c1.calcarea();
     return 0;
 }

@@ -1,20 +1,34 @@
 #include <iostream>
 using namespace std;
-int main() {
+
+class bill {
+public:
     int item_no, quantity;
-    float unit_price, total_amount, discount, final_amount;
-    cout << "Enter item number: ";
-    cin >> item_no;
-    cout << "Enter quantity: ";
-    cin >> quantity;
-    cout << "Enter unit price: ";
-    cin >> unit_price;
-    total_amount = quantity * unit_price;
-    discount = 0.20f * total_amount;
-    final_amount = total_amount - discount;
-    cout << "\nItem Number: " << item_no;
-    cout << "\nTotal Amount: " << total_amount;
-    cout << "\nDiscount (20%): " << discount;
-    cout << "\nFinal Bill Amount: " << final_amount << endl;
+    float unit_price, total, discount, final_amount;
+
+    void getdata() {
+        cout << "Enter item number: ";
+        cin >> item_no;
+        cout << "Enter quantity: ";
+        cin >> quantity;
+        cout << "Enter unit price: ";
+        cin >> unit_price;
+    }
+
+    void calculate() {
+        total = quantity * unit_price;
+        discount = 0.20 * total;
+        final_amount = total - discount;
+
+        cout << "Total Amount: " << total << endl;
+        cout << "Discount (20%): " << discount << endl;
+        cout << "Final Bill Amount: " << final_amount << endl;
+    }
+};
+
+int main() {
+    bill b1;
+    b1.getdata();
+    b1.calculate();
     return 0;
 }
