@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+long long xo(long long n) {
+    if (n % 4 == 0) return n;
+    if (n % 4 == 1) return 1;
+    if (n % 4 == 2) return n + 1;
+    return 0;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    long long l, r;
+    cin >> l >> r;
+
+    long long ans = xo(r) ^ xo(l - 1);
+
+    if (ans % 2 == 0) cout << "even";
+    else cout << "odd";
+
+    return 0;
+}
